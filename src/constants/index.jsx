@@ -50,3 +50,18 @@ export const creators = [
     facebook:"facebook.com"
   },
 ]
+
+
+export const books = [
+  {
+    title: "Book Title 1",
+    image: "https://via.placeholder.com/150",
+    downloadLink: "https://example.com/book1.pdf",
+  },
+  {
+    title: "Book Title 2",
+    image: "https://via.placeholder.com/150",
+    downloadLink: "https://example.com/book2.pdf",
+  },
+  // Add more books as needed
+];
