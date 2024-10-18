@@ -1,6 +1,6 @@
-import logo from "../logo.png"
-import {navItems} from "../constants";
-import { Menu, X} from "lucide-react";
+import logo from "../logo.png";
+import { navItems } from "../constants";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -9,6 +9,7 @@ const Navbar = () => {
     const toggleNavbar = () => {
         setMobileDrawerOpen(!mobileDrawerOpen);
     }
+    
     return (
         <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
             <div className="container px-4 mx-auto relative text-sm">
@@ -25,13 +26,13 @@ const Navbar = () => {
                         ))}
                     </ul>
                     <div className="hidden lg:flex justify-center space-x-12 items-center">
-                        <a href="#" className="py-2 px-3 border rounded-md">Login</a>
-                        <a
-                            href="#"
+                        <button type="button" className="py-2 px-3 border rounded-md">Login</button>
+                        <button
+                            type="button"
                             className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"
-                            onClick={() => alert("To create an account, please contact the admin team directly via email: admin@example.com or phone: +123456789.")}>
+                            onClick={() => alert("To create an account,\nplease contact the admin team directly via:\nEmail: admin@example.com\nPhone: +123456789.")}>
                             Create an account
-                        </a>
+                        </button>
                     </div>
                     <div className="lg:hidden md:flex flex-col justify-end">
                         <button onClick={toggleNavbar}>
