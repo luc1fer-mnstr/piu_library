@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
+import Slider from './components/HeroSection';
 import HowItWorks from './components/HowItWorks';
 import CreatorsSection from './components/Creators';
 import Footer from './components/Footer';
@@ -20,7 +20,7 @@ const App = () => {
             path="/" 
             element={
               <div>
-                <HeroSection />
+                <Slider />
                 <div className="max-w-7xl mx-auto">
                   <section id="how-it-works">
                     <HowItWorks />
