@@ -65,3 +65,11 @@ export const books = [
   },
   // Add more books as needed
 ];
+
+
+// Login users
+export const users = [
+  { id: "2300240", password: "1234", role: "student" },
+  { id: "2300241", password: "2288", role: "student" },
+  { id: "2300242", password: "5678", role: "admin" }
+];

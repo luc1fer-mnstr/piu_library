@@ -1,15 +1,21 @@
+import React, { useState } from "react";
 import logo from "../logo.png";
 import { navItems } from "../constants";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import LoginForm from "./LoginForm"; // Import the LoginForm component
 
 const Navbar = () => {
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+    const [showLoginForm, setShowLoginForm] = useState(false); // State to control login form visibility
 
     const toggleNavbar = () => {
         setMobileDrawerOpen(!mobileDrawerOpen);
     }
-    
+
+    const handleLoginCancel = () => {
+        setShowLoginForm(false); // Hide the login form when cancel is clicked
+    }
+
     return (
         <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
             <div className="container px-4 mx-auto relative text-sm">
@@ -26,7 +32,13 @@ const Navbar = () => {
                         ))}
                     </ul>
                     <div className="hidden lg:flex justify-center space-x-12 items-center">
-                        <button type="button" className="py-2 px-3 border rounded-md">Login</button>
+                        <button
+                            type="button"
+                            className="py-2 px-3 border rounded-md"
+                            onClick={() => setShowLoginForm(true)} // Show login form on click
+                        >
+                            Login
+                        </button>
                         <button
                             type="button"
                             className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"
@@ -50,14 +62,15 @@ const Navbar = () => {
                             ))}
                         </ul>
                         <div className="flex space-x-6">
-                            <a href="#" className="py-2 px-3 border rounded-md">Login</a>
-                            <a href="#" className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800">Create an account</a>
+                            <button onClick={() => setShowLoginForm(true)} className="py-2 px-3 border rounded-md">Login</button>
+                            <button className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800">Create an account</button>
                         </div>
                     </div>
                 )}
             </div>
+            {showLoginForm && <LoginForm onCancel={handleLoginCancel} />} {/* Show LoginForm when state is true */}
         </nav>
-    )
+    );
 };
 
 export default Navbar;

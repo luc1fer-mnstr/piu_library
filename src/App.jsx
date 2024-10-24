@@ -5,19 +5,17 @@ import Slider from './components/HeroSection';
 import HowItWorks from './components/HowItWorks';
 import CreatorsSection from './components/Creators';
 import Footer from './components/Footer';
-import BookSection from './components/Books'; // Import the Book Section
+import BookSection from './components/Books';
+import LoginForm from './components/LoginForm';
 
 const App = () => {
   return (
     <Router>
       <div>
         <Navbar />
-
-        {/* Routes will determine which content to show */}
         <Routes>
-          {/* Home page content */}
-          <Route 
-            path="/" 
+          <Route
+            path="/"
             element={
               <div>
                 <Slider />
@@ -25,7 +23,6 @@ const App = () => {
                   <section id="how-it-works">
                     <HowItWorks />
                   </section>
-
                   <section id="creators">
                     <CreatorsSection />
                   </section>
@@ -34,9 +31,10 @@ const App = () => {
               </div>
             }
           />
-
-          {/* Book section route */}
+          <Route path="/login" element={<LoginForm />} />
           <Route path="/books" element={<BookSection />} />
+          {/* Assuming there will be an admin route later */}
+          {/* <Route path="/admin" element={<AdminPanel />} /> */}
         </Routes>
       </div>
     </Router>
@@ -44,3 +42,4 @@ const App = () => {
 };
 
 export default App;
+
